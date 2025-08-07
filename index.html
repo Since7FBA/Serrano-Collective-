@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Florida-based wholesale distributor for brand-direct and authorized partners. Transparent operations, compliance-first.">
+  <meta name="keywords" content="wholesale, distributor, brand partnership, reseller, ecommerce, Serrano Collective">
+  <meta name="author" content="Serrano Collective">
+  <title>Serrano Collective | Wholesale Distribution & Partnerships</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: 'Inter', system-ui, -apple-system, Arial, sans-serif; margin:0; color:#1f2937; background:#f9fafb; }
+    header { background:#111827; color:#fff; padding:2rem; text-align:center; }
+    .hero { background:url('banner.png') center/cover no-repeat; height:240px; border-radius:8px; margin-bottom:1rem; }
+    nav a { color:#e5e7eb; text-decoration:none; margin:0 .5rem; font-weight:600; }
+    .container { max-width:1000px; margin:2rem auto; padding:1.5rem; background:#fff; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+    h2 { margin-top:0; font-size:2rem; border-bottom:2px solid #e5e7eb; padding-bottom:0.5rem; }
+    .grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin-top:1rem; }
+    .card { background:#fafafa; border:1px solid #e5e7eb; border-radius:8px; overflow:hidden; display:flex; flex-direction:column; }
+    .card img { width:100%; height:200px; object-fit:cover; }
+    .card-body { padding:1rem; flex:1; display:flex; flex-direction:column; justify-content:space-between; }
+    .card-body strong { font-size:1.1rem; }
+    .muted { color:#6b7280; font-size:0.9rem; }
+    .price { font-weight:700; color:#111827; margin-top:0.5rem; }
+    .action { margin-top:1rem; display:flex; gap:0.5rem; align-items:center; }
+    .qty { width:60px; padding:0.4rem; border:1px solid #d1d5db; border-radius:4px; }
+    button { background:#111827; color:#fff; padding:0.6rem 1rem; border:none; border-radius:6px; cursor:pointer; }
+    table { width:100%; border-collapse:collapse; margin-top:1rem; }
+    th, td { padding:0.8rem; border-bottom:1px solid #e5e7eb; }
+    .right { text-align:right; }
+    form { margin-top:1rem; display:grid; gap:1rem; }
+    form input, form textarea, form select { width:100%; padding:0.6rem; border:1px solid #d1d5db; border-radius:4px; }
+    footer { background:#1e293b; color:#fff; text-align:center; padding:1.2rem; margin-top:2rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero"></div>
+    <img src="logo.png" alt="Serrano Logo" style="max-width:140px; margin-bottom:0.5rem;">
+    <h1>Serrano Collective</h1>
+    <p>Wholesale Supply • Brand Partnerships • Compliance-Driven</p>
+    <nav>
+      <a href="#store">Store</a> |
+      <a href="#cart">Cart</a> |
+      <a href="#checkout">Checkout</a> |
+      <a href="#downloads">Documents</a>
+    </nav>
+  </header>
+
+  <div class="container" id="store">
+    <h2>Product Listings</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1525041001193-665b80be8ca4?auto=format&fit=crop&w=600&q=80" alt="Microfiber Cloths">
+        <div class="card-body">
+          <strong>Microfiber Cloths (Case of 24)</strong>
+          <div class="muted">SKU: SKU-MCF24 • MOQ: 2</div>
+          <div class="price">$28.80 / case</div>
+          <div class="action">
+            <input type="number" class="qty" min="2" value="2" id="qty-SKU-MCF24">
+            <button onclick="addToCart('SKU-MCF24')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1562657892-7a1da5828059?auto=format&fit=crop&w=600&q=80" alt="Water Bottle">
+        <div class="card-body">
+          <strong>Stainless Water Bottle (Case of 12)</strong>
+          <div class="muted">SKU: SKU-SWB12 • MOQ: 1</div>
+          <div class="price">$66.00 / case</div>
+          <div class="action">
+            <input type="number" class="qty" min="1" value="1" id="qty-SKU-SWB12">
+            <button onclick="addToCart('SKU-SWB12')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1591012911201-4e1111c01d32?auto=format&fit=crop&w=600&q=80" alt="SB-C Charging Cable">
+        <div class="card-body">
+          <strong>SB-C Charging Cable 1m (Case of 50)</strong>
+          <div class="muted">SKU: SKU-SBC1M • MOQ: 1</div>
+          <div class="price">$75.00 / case</div>
+          <div class="action">
+            <input type="number" class="qty" min="1" value="1" id="qty-SKU-SBC1M">
+            <button onclick="addToCart('SKU-SBC1M')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="cart">
+    <h2>Cart</h2>
+    <table id="cartTable"><thead><tr><th>Product</th><th>Qty</th><th class="right">Price</th><th class="right">Total</th></tr></thead><tbody></tbody></table>
+    <p class="right"><strong>Subtotal:</strong> <span id="cartSubtotal">$0.00</span></p>
+    <button onclick="location.hash='#checkout'">Proceed to Checkout</button>
+  </div>
+
+  <div class="container" id="checkout">
+    <h2>Checkout</h2>
+    <p>Fill out the form below to request an invoice. No payment collected on-site.</p>
+    <form action="https://formsubmit.co/info@serranocollective.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="company" placeholder="Company Name" required>
+      <input type="text" name="name" placeholder="Contact Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <textarea name="order_details" rows="4" placeholder="Requested Products & Qty"></textarea>
+      <h3>Payment Details</h3>
+      <select name="payment_method" required>
+        <option value="">Select Payment Method</option>
+        <option value="Net 30">Net 30</option>
+        <option value="Credit Card">Credit Card</option>
+        <option value="ACH">ACH Transfer</option>
+      </select>
+      <input type="text" name="card_number" placeholder="Card Number">
+      <input type="text" name="exp_date" placeholder="Expiration Date (MM/YY)">
+      <input type="text" name="cvv" placeholder="CVV">
+      <button type="submit">Submit Invoice Request</button>
+    </form>
+  </div>
+
+  <div class="container" id="downloads">
+    <h2>Documents</h2>
+    <p>Reseller Application, NDA Template, and Florida Resale Certificate are available upon request.</p>
+  </div>
+
+  <footer><p>&copy; 2025 Serrano Collective. All rights reserved.</p></footer>
+
+  <script>
+    const products=[
+      {id:'SKU-MCF24',name:'Microfiber Cloths',price:28.8,moq:2},
+      {id:'SKU-SWB12',name:'Stainless Water Bottle',price:66,moq:1},
+      {id:'SKU-SBC1M',name:'SB-C Charging Cable 1m',price:75,moq:1}
+    ];
+    let cart=[];
+    function saveCart(){localStorage.setItem('sc_cart',JSON.stringify(cart));}
+    function addToCart(id){const p=products.find(x=>x.id===id),e=cart.find(x=>x.id===id);e?e.qty+=p.moq:cart.push({id:p.id,name:p.name,price:p.price,qty:p.moq});saveCart();renderCart();}
+    function renderCart(){const tbody=document.querySelector('#cartTable tbody');tbody.innerHTML='';let subtotal=0;cart.forEach(item=>{const line=item.price*item.qty;subtotal+=line;tbody.insertAdjacentHTML('beforeend',`<tr><td>${item.name}</td><td>${item.qty}</td><td class="right">$${item.price.toFixed(2)}</td><td class="right">$${line.toFixed(2)}</td></tr>`)});document.getElementById('cartSubtotal').textContent=`$${subtotal.toFixed(2)}`;}
+  </script>
+</body>
+</html>
