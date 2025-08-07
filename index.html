@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Serrano Collective | Faire-Ready Wholesale Site</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      color: #333;
+    }
+    header {
+      background: #111;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .logo {
+      max-width: 160px;
+      margin: 0 auto 1rem auto;
+    }
+    .container {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .product {
+      border: 1px solid #ddd;
+      padding: 1rem;
+      text-align: center;
+      background: #fafafa;
+    }
+    .product img {
+      max-width: 100%;
+      height: auto;
+    }
+    .checkout-form {
+      margin-top: 2rem;
+    }
+    .checkout-form input, .checkout-form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img class="logo" src="logo.png" alt="Serrano Logo" />
+    <h1>Serrano Collective</h1>
+    <p>Wholesale Supply for Modern Retailers</p>
+  </header>
+  <div class="container">
+    <h2>Product Listings</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="products/product1.jpg" alt="Microfiber Cloths" />
+        <h3>Microfiber Cloths</h3>
+        <p>Case of 24 – $28.80</p>
+        <p>MOQ: 2 cases</p>
+      </div>
+      <div class="product">
+        <img src="products/product2.jpg" alt="Water Bottle" />
+        <h3>Stainless Water Bottle</h3>
+        <p>Case of 12 – $66.00</p>
+        <p>MOQ: 1 case</p>
+      </div>
+    </div>
+
+    <h2>Cart (Mock)</h2>
+    <table style="width: 100%; border-collapse: collapse;" border="1">
+      <tr><th>Product</th><th>Qty</th><th>Price</th></tr>
+      <tr><td>Microfiber Cloths</td><td>2 cases</td><td>$57.60</td></tr>
+    </table>
+
+    <div class="checkout-form">
+      <h2>Checkout Request</h2>
+      <form action="https://formsubmit.co/info@serranocollective.com" method="POST">
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <textarea name="message" rows="4" placeholder="Let us know what you need..."></textarea>
+        <button type="submit">Submit Request</button>
+      </form>
+    </div>
+
+    <p><strong>Documents:</strong> NDA, Resale Certificate & Application available upon request.</p>
+  </div>
+  <div class="footer">
+    &copy; 2025 Serrano Collective – All rights reserved.
+  </div>
+</body>
+</html>
