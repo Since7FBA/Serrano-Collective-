@@ -1,0 +1,69 @@
+:root{
+  --bg:#ffffff;
+  --text:#111827;
+  --muted:#6b7280;
+  --line:#e5e7eb;
+  --brand:#0a0a0a;
+  --brandHover:#111;
+  --card:#ffffff;
+  --shadow:0 8px 24px rgba(0,0,0,.08);
+  --radius:16px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Ubuntu,Cantarell,'Noto Sans',Arial;background:var(--bg);color:var(--text)}
+
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+
+.container{max-width:1120px;margin:0 auto;padding:16px}
+.section{padding:24px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:12px}
+.muted{color:var(--muted)}
+.big{font-size:1.05rem;line-height:1.75}
+.small{font-size:.86rem}
+
+/* Header */
+.site-header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:20;backdrop-filter:saturate(180%) blur(6px)}
+.header-inner{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.brand{display:inline-flex;align-items:center;gap:10px}
+.brand-logo{height:40px;width:auto;border-radius:10px}
+.brand-text{position:absolute;left:-9999px}
+@media (min-width:700px){
+  .brand-text{position:static;left:auto;clip:auto;height:auto;width:auto;overflow:visible}
+}
+.nav{display:flex;gap:16px;font-size:14px;flex-wrap:wrap}
+.header-right{display:flex;align-items:center;gap:12px}
+.icon{display:inline-flex;border:1px solid var(--line);border-radius:12px;padding:6px 10px;background:#fff}
+
+/* Hero */
+.hero{border-bottom:1px solid var(--line);background:#fafafa}
+.hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:24px 16px}
+.hero-copy h1{font-size:36px;margin:0}
+.hero-copy p{margin:12px 0 16px}
+
+/* Buttons */
+.btn{display:inline-block;border-radius:12px;padding:11px 14px;font-weight:600;cursor:pointer;transition:.15s ease}
+.btn-primary{background:var(--brand);color:#fff}
+.btn-primary:hover{background:var(--brandHover)}
+
+/* Products */
+.grid.products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card.product{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+.product .media img{width:100%;height:230px;object-fit:cover}
+.product .body{padding:14px;display:flex;flex-direction:column;gap:8px}
+.product .title{font-size:16px;font-weight:600}
+.product .price{color:var(--muted)}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--line);margin-top:24px}
+.footer-inner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;font-size:14px}
+.footer-title{font-weight:600}
+.footer-brand{font-weight:700;margin-bottom:6px}
+.footer-links{list-style:none;padding:0;margin:8px 0;display:grid;gap:6px}
+.footer-links a{text-decoration:underline}
+.copyright{border-top:1px solid var(--line);padding:12px;text-align:center;font-size:12px;color:var(--muted)}
+
+@media (max-width:980px){.grid.products{grid-template-columns:repeat(2,1fr)}.hero-inner{grid-template-columns:1fr}}
+@media (max-width:520px){.grid.products{grid-template-columns:1fr}.hero-copy h1{font-size:28px}}
